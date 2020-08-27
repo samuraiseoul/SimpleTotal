@@ -1,9 +1,9 @@
 {
   "name" : "Simple Total Balance Calculator",
   "version" : "1.0.1",
-  "description" : "Simple extension for calculating your total balance across all Simple accounts. Code can be found at ",
+  "description" : "Simple extension for calculating your total balance across all Simple accounts.",
+  "homepage_url" : "https://github.com/samuraiseoul/SimpleTotal",
   "author": "Scott Lavigne",
-
   "manifest_version" : 2,
   "icons" : {
     "16" : "./icons/icon16.png",
@@ -22,9 +22,12 @@
       "140" : "./icons/icon140.png"
     }
   },
+  "permissions": [
+    "activeTab"
+  ],
   "content_scripts" : [
     {
-      "matches" : ["*://bank.simple.com/*"],
+      "matches" : ["https://bank.simple.com/", "https://bank.simple.com/expenses", "https://bank.simple.com/goals" , "https://bank.simple.com/cds"],
       "js" : [ "./content.js" ]
     }
   ],
